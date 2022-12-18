@@ -12,9 +12,9 @@
 2. Новостную сводку хосписа.
 3. Тематические цитаты.
 
-**План тестирования:** Plan.md (/Plan.md)
+**План тестирования:** Plan.md (https://github.com/Vavlauz/Diploma_Mobile_Hospice/blob/master/Plan.md)
 
-**Чек-лист проекта с отметками о пройденых и непройденых тестах:** Check ()
+**Чек-лист проекта с отметками о пройденых и непройденых тестах:** Check (https://github.com/Vavlauz/Diploma_Mobile_Hospice/blob/master/Check.xlsx)
 
-**Тест-кейсы:** Cases ()
+**Тест-кейсы:** Cases (https://github.com/Vavlauz/Diploma_Mobile_Hospice/blob/master/Cases.xlsx)
 
