@@ -1,0 +1,117 @@
+{
+    "name": "shouldBeFullContentInEachQuote",
+    "start": 1672751447374,
+    "stop": 1672751457036,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1672751455170,
+            "stop": 1672751455170,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок цитат о хосписе",
+            "start": 1672751455178,
+            "stop": 1672751455178,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Раскрыть/свернуть первую цитату",
+            "start": 1672751455549,
+            "stop": 1672751455549,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверить содержимое первой цитаты",
+            "start": 1672751456000,
+            "stop": 1672751456000,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "7bb5aa8d-fabf-4c56-ad07-13c7712ba053",
+    "historyId": "9f98321892c58957c8ab42aa506705a2",
+    "fullName": "tests.QuotesTests.shouldBeFullContentInEachQuote",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.QuotesTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldBeFullContentInEachQuote"
+        },
+        {
+            "name": "suite",
+            "value": "tests.QuotesTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1211)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

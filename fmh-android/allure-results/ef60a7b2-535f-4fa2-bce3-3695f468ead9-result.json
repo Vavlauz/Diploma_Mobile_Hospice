@@ -1,0 +1,85 @@
+{
+    "name": "Вход в личный кабинет с пустыми полями",
+    "start": 1672750865674,
+    "stop": 1672750875308,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1672750873838,
+            "stop": 1672750873838,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Кликнуть на кнопку Войти",
+            "start": 1672750873853,
+            "stop": 1672750873854,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ef60a7b2-535f-4fa2-bce3-3695f468ead9",
+    "historyId": "488ba0b114fd55620124f64299daed54",
+    "fullName": "tests.AuthorizationTests.shouldTryLogInWithEmptyField",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.AuthorizationTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldTryLogInWithEmptyField"
+        },
+        {
+            "name": "suite",
+            "value": "tests.AuthorizationTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1211)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

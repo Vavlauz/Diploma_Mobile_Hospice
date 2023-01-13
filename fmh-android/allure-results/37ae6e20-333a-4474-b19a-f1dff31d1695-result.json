@@ -1,0 +1,117 @@
+{
+    "name": "Полнота информации новостей (в развернутом состоянии) в блоке \"Новости\"",
+    "start": 1672751417405,
+    "stop": 1672751427870,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1672751425158,
+            "stop": 1672751425158,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Новости\"",
+            "start": 1672751425170,
+            "stop": 1672751425170,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Раскрыть первую заявку в блоке новостей",
+            "start": 1672751426176,
+            "stop": 1672751426176,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверить базовое содержимое раскрытой первой новости в блоке новостей",
+            "start": 1672751426803,
+            "stop": 1672751426803,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "37ae6e20-333a-4474-b19a-f1dff31d1695",
+    "historyId": "4b1b4835ab6a6aacb2fe2277e06ce87",
+    "fullName": "tests.NewsTests.shouldBeFullContentOfFirstExpandedNewsInNewsBlock",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.NewsTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldBeFullContentOfFirstExpandedNewsInNewsBlock"
+        },
+        {
+            "name": "suite",
+            "value": "tests.NewsTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1211)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "name": "Переход в блок \"Заявки\" при помощи меню",
+    "start": 1672751242539,
+    "stop": 1672751252258,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1672751250312,
+            "stop": 1672751250312,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1672751250321,
+            "stop": 1672751250321,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "658e29e7-315b-4675-bf72-372c9290dd96",
+    "historyId": "4c7a1626b19f8e1c1dfedbc4746e547d",
+    "fullName": "tests.MenuTests.shouldGoToClaimsBlockWithMenu",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.MenuTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldGoToClaimsBlockWithMenu"
+        },
+        {
+            "name": "suite",
+            "value": "tests.MenuTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1211)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}
