@@ -1,0 +1,149 @@
+{
+    "name": "Создание заявки при вводе валидных данных во все поля (кириллические символы, текущая дата и текущее время в формате циферблата)",
+    "start": 1673684335072,
+    "stop": 1673684642994,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673684342608,
+            "stop": 1673684342608,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673684342643,
+            "stop": 1673684342643,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Начинаем создавать заявку (переход в раздел создания заявки)",
+            "start": 1673684343673,
+            "stop": 1673684343673,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Заполнение полей при создании заявки",
+            "start": 1673684346008,
+            "stop": 1673684346008,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Сохранить заявку",
+            "start": 1673684355840,
+            "stop": 1673684355840,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка созданной заявки по заголовку",
+            "start": 1673684358172,
+            "stop": 1673684358172,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "6be7e5fa-3878-4f4e-96db-8b904327052e",
+    "historyId": "c7510d166ebf6c6e97a051ae79cd851",
+    "fullName": "tests.ClaimCreationTest.shouldCreateClaimWithValidData",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldCreateClaimWithValidData"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

@@ -63,11 +63,12 @@ public class QuotesTests {
         QuotesSteps.findQuoteWith(quoteTextTitle6);
     }
 
-    @Test
+    @Test // в одиночку проходит
     @DisplayName("shouldBeFullContentInEachQuote")
-    public void shouldBeFullContentInEachQuote() {
+    public void shouldBeFullContentInEachQuote() throws InterruptedException {
         ControlPanelSteps.goToQuotesBlock();
         QuotesSteps.openOrCloseFirstQuote();
+        Thread.sleep(3000);
         QuotesSteps.checkThatFirstQuoteContentIsFull();
     }
 

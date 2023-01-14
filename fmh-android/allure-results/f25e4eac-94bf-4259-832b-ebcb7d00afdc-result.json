@@ -1,0 +1,133 @@
+{
+    "name": "Отмена выбора даты при создании заявки",
+    "start": 1673683253788,
+    "stop": 1673683274841,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673683261276,
+            "stop": 1673683261276,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673683261314,
+            "stop": 1673683261315,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Начинаем создавать заявку (переход в раздел создания заявки)",
+            "start": 1673683262156,
+            "stop": 1673683262157,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Заполнение полей при создании заявки",
+            "start": 1673683264518,
+            "stop": 1673683264518,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Сохранить заявку",
+            "start": 1673683271453,
+            "stop": 1673683271453,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "f25e4eac-94bf-4259-832b-ebcb7d00afdc",
+    "historyId": "4d58af499a0ebd2fe7992d265bbbb4e5",
+    "fullName": "tests.ClaimCreationTest.shouldTryCreateClaimWithEmptyDate",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldTryCreateClaimWithEmptyDate"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

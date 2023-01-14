@@ -66,7 +66,7 @@ public class ClaimCreationTest {
     @DisplayName("Ввод 49 символов в поле \"Тема\" при создании заявки")
     public void shouldInput49SymbolsInTitleDuringClaimCreation() throws InterruptedException {
         String emptyTitle = "no";
-        String title49 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom002";
+        String title49 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom007";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Netology Diplom QAMID";
@@ -88,7 +88,7 @@ public class ClaimCreationTest {
     @DisplayName("Ввод 50 символов в поле \"Тема\" при создании заявки")
     public void shouldInput50SymbolsInTitleDuringClaimCreation() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom0002";
+        String title = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom0004";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Netology Diplom QAMID";
@@ -106,15 +106,15 @@ public class ClaimCreationTest {
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
     }
 
-    @Test // тест длительно выполняется из-за огромного количества заявок
-    @DisplayName("Ввод 51 символа в поле \"Тема\" при создании заявки")
+    @Test // тест падает из-за того, что программа не может ввести 51 символ
+    @DisplayName("Попытка ввода 51 символа в поле \"Тема\" при создании заявки")
     public void shouldInput51SymbolsInTitleDuringClaimCreation() throws InterruptedException {
         String emptyTitle = "no";
-        String title51 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM00031";
-        String titleOfCreatedClaim = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM0003";
+        String title51 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM00051";
+        String titleOfCreatedClaim = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM0005";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
-        String chosenExecutor = "Netology Diplom QAMID";
+        String chosenExecutor = "Ivanov Ivan Ivanovich";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
@@ -155,7 +155,7 @@ public class ClaimCreationTest {
     @DisplayName("Пустой ввод в поле \"Описание\" при создании заявки")
     public void shouldTryCreateClaimWithEmptyDescription() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "QAMIDK781";
+        String title = "QAMIDK7814";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Смирнов Петр Петрович";
@@ -177,7 +177,7 @@ public class ClaimCreationTest {
     @DisplayName("Отмена выбора даты при создании заявки")
     public void shouldTryCreateClaimWithEmptyDate() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "QAMIDK78lFk";
+        String title = "QAMIDK78lFky";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Иванов Данил Данилович";
@@ -199,7 +199,7 @@ public class ClaimCreationTest {
     @DisplayName("Отмена выбора времени в разделе циферблат при создании заявки")
     public void shouldTryCreateClaimWithCancelSavingOfTime() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "QAMIDK78gFc";
+        String title = "QAMIDK78gFct";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Ivanov Danil Danilovich";
@@ -218,11 +218,11 @@ public class ClaimCreationTest {
 
     }
 
-    @Test // тест длительно выполняется из-за огромного количества заявок
+    @Test // тест длительно выполняется из-за огромного количества заявок, лучше запускать в одиночку
     @DisplayName("Пустой ввод в поле \"Исполнитель\" при создании заявки")
     public void shouldTryCreateClaimWithEmptyExecutor() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "QAMID345Hp";
+        String title = "QAMID345Hpik";
         String emptyExecutor = "yes";
         String choiceOfExecutor = "no";
         String chosenExecutor = "no";
@@ -248,7 +248,7 @@ public class ClaimCreationTest {
     @DisplayName("Ручной ввод часов и минут при при создании заявки")
     public void shouldCreateClaimWithManualTimeInput() throws InterruptedException {
         String emptyTitle = "no";
-        String title = "QAMID10s";
+        String title = "QAMID10s2";
         String emptyExecutor = "no";
         String choiceOfExecutor = "yes";
         String chosenExecutor = "Netology Diplom QAMID";

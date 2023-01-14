@@ -1,0 +1,149 @@
+{
+    "name": "Попытка ввода 51 символа в поле \"Тема\" при создании заявки",
+    "start": 1673683274892,
+    "stop": 1673683779093,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673683282836,
+            "stop": 1673683282836,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673683282870,
+            "stop": 1673683282870,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Начинаем создавать заявку (переход в раздел создания заявки)",
+            "start": 1673683283689,
+            "stop": 1673683283689,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Заполнение полей при создании заявки",
+            "start": 1673683286025,
+            "stop": 1673683286025,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Сохранить заявку",
+            "start": 1673683296019,
+            "stop": 1673683296020,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка созданной заявки по заголовку",
+            "start": 1673683298443,
+            "stop": 1673683298443,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ae36e1c9-39ec-4810-a6ef-57ab6b70746a",
+    "historyId": "b0d596dec98de6b03944eb1cdc5c02e2",
+    "fullName": "tests.ClaimCreationTest.shouldInput51SymbolsInTitleDuringClaimCreation",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldInput51SymbolsInTitleDuringClaimCreation"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

@@ -108,7 +108,7 @@ public class NewsCreationTests {
         NewsSteps.deleteNews(chosenCategory);
     }
 
-    @Test  // не самый стабильный тест
+    @Test  // не самый стабильный тест (не проходит из-за ранее созданных новостей)
     @DisplayName("Отмена создания новости")
     public void shouldCancelNewsCreation() throws InterruptedException {
         String emptyCategory = "no";

@@ -1,0 +1,133 @@
+{
+    "name": "Ввод >60 в поле минуты при создании заявки",
+    "start": 1673685156678,
+    "stop": 1673685169195,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673685164104,
+            "stop": 1673685164104,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673685164130,
+            "stop": 1673685164130,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Начинаем создавать заявку (переход в раздел создания заявки)",
+            "start": 1673685165006,
+            "stop": 1673685165007,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Ввод времени вручную",
+            "start": 1673685167318,
+            "stop": 1673685167318,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка, что появляется предупреждение о необходимости заполнить поля времени валидными данными",
+            "start": 1673685168467,
+            "stop": 1673685168468,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "d2a0ab00-c534-4f35-bf5e-f8308e9de47e",
+    "historyId": "ed96e2433515c572ffd8a6ec4c409b43",
+    "fullName": "tests.ClaimCreationTest.shouldInputMoreThan60MinutesWhenClaimIsBeingCreated",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldInputMoreThan60MinutesWhenClaimIsBeingCreated"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

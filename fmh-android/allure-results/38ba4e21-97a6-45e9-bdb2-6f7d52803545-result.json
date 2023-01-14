@@ -1,0 +1,133 @@
+{
+    "name": "Отмена выбора времени в разделе циферблат при создании заявки",
+    "start": 1673683779125,
+    "stop": 1673683803355,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673683786735,
+            "stop": 1673683786735,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673683786780,
+            "stop": 1673683786781,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Начинаем создавать заявку (переход в раздел создания заявки)",
+            "start": 1673683787705,
+            "stop": 1673683787705,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Заполнение полей при создании заявки",
+            "start": 1673683790126,
+            "stop": 1673683790127,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Сохранить заявку",
+            "start": 1673683800065,
+            "stop": 1673683800065,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "38ba4e21-97a6-45e9-bdb2-6f7d52803545",
+    "historyId": "91cbb9161f00cdfc4a2d4e9e417b9ec6",
+    "fullName": "tests.ClaimCreationTest.shouldTryCreateClaimWithCancelSavingOfTime",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldTryCreateClaimWithCancelSavingOfTime"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimCreationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

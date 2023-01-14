@@ -1,0 +1,101 @@
+{
+    "name": "Раскрытие новости в главном блоке",
+    "start": 1673686036903,
+    "stop": 1673686045280,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673686044291,
+            "stop": 1673686044292,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Раскрыть первую новость в главном блоке",
+            "start": 1673686044322,
+            "stop": 1673686044323,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка видимости описания первой новости в главном блоке",
+            "start": 1673686044619,
+            "stop": 1673686044619,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "a37042a2-08bc-492c-a321-88ff6de48798",
+    "historyId": "771a2987ea7f6a28fad464a132ef03a8",
+    "fullName": "tests.MainBlockTests.newsCanBeExpandedInMainBlock",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.MainBlockTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "newsCanBeExpandedInMainBlock"
+        },
+        {
+            "name": "suite",
+            "value": "tests.MainBlockTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

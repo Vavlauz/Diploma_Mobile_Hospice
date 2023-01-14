@@ -1,0 +1,117 @@
+{
+    "name": "Вход в личный кабинет с валидными данными (латинские символы)",
+    "start": 1673682711135,
+    "stop": 1673682724066,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673682718625,
+            "stop": 1673682718625,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Авторизация (вход в личный кабинет)",
+            "start": 1673682718632,
+            "stop": 1673682718633,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка видимости эмблемы приложения",
+            "start": 1673682722486,
+            "stop": 1673682722486,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Выход из личного кабинета",
+            "start": 1673682722489,
+            "stop": 1673682722489,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "630fd249-3a66-4242-bb4d-c8201d63bcb3",
+    "historyId": "230c27d6cd6b4ba1e6971349c5a6ef6",
+    "fullName": "tests.AuthorizationTests.shouldLogInWithValidData",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.AuthorizationTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldLogInWithValidData"
+        },
+        {
+            "name": "suite",
+            "value": "tests.AuthorizationTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+{
+    "name": "Наличие всех заявок в блоке \"Заявки\" (минимум 3)",
+    "start": 1673685746737,
+    "stop": 1673685755581,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673685754161,
+            "stop": 1673685754161,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в блок \"Заявки\"",
+            "start": 1673685754191,
+            "stop": 1673685754191,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка, что в блоке заявок имеется минимум 3 заявки",
+            "start": 1673685754924,
+            "stop": 1673685754924,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ab8374f5-3845-4e07-aee7-572cdc002735",
+    "historyId": "7c0c6d9667ed2ff58fff02ecdf6f6e1",
+    "fullName": "tests.ClaimsTests.shouldBeThreeClaimsInClaimsBlock",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.ClaimsTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldBeThreeClaimsInClaimsBlock"
+        },
+        {
+            "name": "suite",
+            "value": "tests.ClaimsTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

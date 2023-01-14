@@ -1,0 +1,85 @@
+{
+    "name": "Полнота информации свернутой новости в главном блоке",
+    "start": 1673686045328,
+    "stop": 1673686053544,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Проверка, что открыто акно авторизации",
+            "start": 1673686052741,
+            "stop": 1673686052742,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка видимости содержимого не раскрытой первой новости в главном блоке",
+            "start": 1673686052767,
+            "stop": 1673686052767,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "64295a2e-bb1b-4ee6-a010-4493bbd04e3c",
+    "historyId": "680d4e768062104d5919999ac72907b4",
+    "fullName": "tests.MainBlockTests.shouldBeFullContentOfNotExpandedNewsInMainBlock",
+    "labels": [
+        {
+            "name": "package",
+            "value": "tests"
+        },
+        {
+            "name": "testClass",
+            "value": "tests.MainBlockTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldBeFullContentOfNotExpandedNewsInMainBlock"
+        },
+        {
+            "name": "suite",
+            "value": "tests.MainBlockTests"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(4561)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}
