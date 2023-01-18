@@ -14,7 +14,7 @@
 .cxx
 local.properties
 .idea/
-/app.db
+*.db
 app.db-shm
 .db-wal
 .db-journal
