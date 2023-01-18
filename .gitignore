@@ -14,11 +14,12 @@
 .cxx
 local.properties
 .idea/
-*.db
-app.db-shm
+.db
+.db-shm
 .db-wal
 .db-journal
-/PersistedInstallation.W0RFRkFVTFRd+MTo3Mjk1ODc3NDIwNjA6YW5kcm9pZDplN2Q2Zjg3Yzc4M2Y1MmI5YTQyZjQ5.json
-com.google.android.datatransport.events
+.json
+.events
 .events-journal
 .lock
+/.com.google.firebase.crashlytics.files.v1
