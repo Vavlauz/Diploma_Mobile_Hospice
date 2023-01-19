@@ -8,13 +8,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import additional.ExampleOfNews;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import steps.AuthorizationSteps;
 import steps.ControlPanelSteps;
 import steps.NewsCreationAndEditingSteps;
 import steps.NewsSteps;
-import ru.iteco.fmhandroid.ui.AppActivity;
 
 @RunWith(AllureAndroidJUnit4.class)
 public class NewsTests {
@@ -36,24 +37,24 @@ public class NewsTests {
 
     @Test // в одиночку проходит
     @DisplayName("Наличие новостей в блоке \"Новости\" (минимум 3)")
-    public void shouldBeThreeNewsInNewsBlock() throws InterruptedException {
+    public void shouldBeThreeNewsInNewsBlock() {
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.checkThatThereAreThreeNewsItemsInTheNewsBlock();
     }
 
     @Test // в одиночку проходит
     @DisplayName("Полнота информации новостей (в развернутом состоянии) в блоке \"Новости\"")
-    public void shouldBeFullContentOfFirstExpandedNewsInNewsBlock() throws InterruptedException {
+    public void shouldBeFullContentOfFirstExpandedNewsInNewsBlock() {
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.expandFirstNewsInNewsBlock();
         NewsSteps.checkBasicContentOfFirstExpandedNewsInNewsBlock();
     }
 
-    @Test // проблемы со стабильностью
+    @Test // в одиночку проходит
     @DisplayName("Удаление новости")
     public void shouldDeleteNews() throws InterruptedException {
         String emptyCategory = "no";
-        String withCategoryChoice = "yes";
+        String choiceOfCategory = "yes";
         String chosenCategory = "Зарплата";
         String category = "no";
         String title = "no";
@@ -61,11 +62,11 @@ public class NewsTests {
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        NewsCreationAndEditingSteps.fillInTheNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.checkNewsData(chosenCategory, description);

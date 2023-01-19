@@ -3,8 +3,6 @@ package tests;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.rule.ActivityTestRule;
 
-import steps.CommentSteps;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,11 +10,12 @@ import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import steps.AuthorizationSteps;
 import steps.ClaimSteps;
 import steps.ClaimsSteps;
+import steps.CommentSteps;
 import steps.ControlPanelSteps;
-import ru.iteco.fmhandroid.ui.AppActivity;
 
 @RunWith(AllureAndroidJUnit4.class)
 public class CommentEditingTests {
@@ -38,18 +37,16 @@ public class CommentEditingTests {
 
     @Test // проходит на эмуляторе, но падает, при запуске всех тестов
     @DisplayName("Редактирование комментария в заявке при валидных данных (кириллические символы)")
-    public void shouldEditCommentOfClaim() throws InterruptedException {
-        String comment = "QA Midd1088";
-        String commentForEditing = "QA Midd222s8";
+    public void shouldEditCommentOfClaim() {
+        String comment = "QA Midd10893";
+        String commentForEditing = "QA Midd222s93";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.goToFirstClaimFromClaimsBlock();
-        Thread.sleep(3000);
         // приступаем к созданию комментария
         ClaimSteps.scrollToLastComment();
         ClaimSteps.initiateCommentCreation();
         CommentSteps.fillInTheCommentField(comment);
         CommentSteps.saveComment();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.isCommentDisplayed(comment);
         // приступаем к редактированию комментария
@@ -57,7 +54,6 @@ public class CommentEditingTests {
         ClaimSteps.initiateCommentEditing(comment);
         CommentSteps.fillInTheCommentField(commentForEditing);
         CommentSteps.saveComment();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.isCommentDisplayed(commentForEditing);
     }

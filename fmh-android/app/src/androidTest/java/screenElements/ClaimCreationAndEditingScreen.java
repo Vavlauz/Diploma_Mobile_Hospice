@@ -11,20 +11,6 @@ import ru.iteco.fmhandroid.R;
 
 public class ClaimCreationAndEditingScreen {
 
-    // Смена статуса заявки (со статусом open)
-    String changeStatusButtonOfClaim = "status_processing_image_button";
-
-    // Редактирование заявки (предварительно нажать на заявку)
-    String editClaimButton = "edit_processing_image_button";
-    String editCommentButton = "edit_comment_image_button";
-    String addCommentButton = "add_comment_image_button";
-
-    // Элементы при создании/редактировании заявки
-    String titleOfClaimBlock = "custom_app_bar_title_text_view";
-    String subtitleOfClaimBlock = "custom_app_bar_sub_title_text_view";
-    String iconForExecutorChoice = "text_input_end_icon";
-
-
     public static ViewInteraction titleOfClaimsCreatingPage = onView(withText("Creating"));
     public static ViewInteraction titleTextInputOfClaim = onView(withId(R.id.title_edit_text));
     public static ViewInteraction executorTextInput = onView(withId(R.id.executor_drop_menu_auto_complete_text_view));

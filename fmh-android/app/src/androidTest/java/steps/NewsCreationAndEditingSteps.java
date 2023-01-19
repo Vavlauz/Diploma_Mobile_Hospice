@@ -8,6 +8,7 @@ import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -27,6 +28,7 @@ import androidx.test.rule.ActivityTestRule;
 
 import org.hamcrest.Matchers;
 
+import additional.ExampleOfNews;
 import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
@@ -38,52 +40,52 @@ public class NewsCreationAndEditingSteps {
 
 
 
-    public static void fillInTheNewsFields(String emptyCategory, String choiceOfCategory, String chosenCategory, String category, String title, String emptyDate, String emptyTime, String withDialPadOrTextInput, String saveOrCancelTime, String emptyDescription, String description) {
+    public static void fillInTheNewsFields(ExampleOfNews exampleOfNews) {
         Allure.step("Заполнение полей при создании/редактировании новости");
         // определяется позиция дочернего элемента
         Integer categoryPosition = null;
-        if (chosenCategory == "Объявление") {
+        if (exampleOfNews.chosenCategory == "Объявление") {
             categoryPosition = 0;
-        } else if (chosenCategory == "День рождения") {
+        } else if (exampleOfNews.chosenCategory == "День рождения") {
             categoryPosition = 1;
-        } else if (chosenCategory == "Зарплата") {
+        } else if (exampleOfNews.chosenCategory == "Зарплата") {
             categoryPosition = 2;
-        } else if (chosenCategory == "Профсоюз") {
+        } else if (exampleOfNews.chosenCategory == "Профсоюз") {
             categoryPosition = 3;
-        } else if (chosenCategory == "Праздник") {
+        } else if (exampleOfNews.chosenCategory == "Праздник") {
             categoryPosition = 4;
-        } else if (chosenCategory == "Массаж") {
+        } else if (exampleOfNews.chosenCategory == "Массаж") {
             categoryPosition = 5;
-        } else if (chosenCategory == "Благодарность") {
+        } else if (exampleOfNews.chosenCategory == "Благодарность") {
             categoryPosition = 6;
-        } else if (chosenCategory == "Нужна помощь") {
+        } else if (exampleOfNews.chosenCategory == "Нужна помощь") {
             categoryPosition = 7;
         }
         // заполнение поля "Категория"
-        if (emptyCategory == "no") {
-            if (choiceOfCategory == "yes") {
+        if (exampleOfNews.emptyCategory == "no") {
+            if (exampleOfNews.choiceOfCategory == "yes") {
                 NewsCreationAndEditingScreen.buttonForShowingDropdownMenu.perform(click());
                 // выбор категории (источник: https://stackoverflow.com/questions/29438569/dropdown-value-selection-using-espresso-android-with-dynamic-element-ids)
                 Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(categoryPosition).perform(ViewActions.click());
-                NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(chosenCategory + "2"));
+                NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(exampleOfNews.chosenCategory + "2"));
             } else {
-                NewsCreationAndEditingScreen.categoryTextInputOfNews.perform(replaceText(category));
+                NewsCreationAndEditingScreen.categoryTextInputOfNews.perform(replaceText(exampleOfNews.category));
                 NewsCreationAndEditingScreen.categoryTextInputOfNews.check(matches(isDisplayed()));
             }
         } else {
-            NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(title));
-            NewsCreationAndEditingScreen.titleTextInputOfNews.check(matches(withText(title)));
+            NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(exampleOfNews.title));
+            NewsCreationAndEditingScreen.titleTextInputOfNews.check(matches(withText(exampleOfNews.title)));
         }
         // заполнение поля "Дата"
-        if (emptyDate == "no") {
+        if (exampleOfNews.emptyDate == "no") {
             publicationDateTextInputOfNews.perform(click());
             NewsCreationAndEditingScreen.okButton.perform(click());
         }
         // заполнение поля "Время"
-        if (emptyTime == "no") {
-            if (withDialPadOrTextInput == "dial") {
+        if (exampleOfNews.emptyTime == "no") {
+            if (exampleOfNews.withDialPadOrTextInput == "dial") {
                 NewsCreationAndEditingScreen.timeTextInputOfNews.perform(click());
-                if (saveOrCancelTime == "save") {
+                if (exampleOfNews.saveOrCancelTime == "save") {
                     NewsCreationAndEditingScreen.okButton.perform(click());
                 } else {
                     NewsCreationAndEditingScreen.cancelButton.perform(click());
@@ -97,17 +99,15 @@ public class NewsCreationAndEditingSteps {
             }
         }
         // заполнение поля "Описание"
-        if (emptyDescription == "no") {
-            NewsCreationAndEditingScreen.descriptionTextInputOfNews.perform(replaceText(description));
-            NewsCreationAndEditingScreen.descriptionTextInputOfNews.check(matches(withText(description)));
+        if (exampleOfNews.description != null) {
+            NewsCreationAndEditingScreen.descriptionTextInputOfNews.perform(replaceText(exampleOfNews.description));
+            NewsCreationAndEditingScreen.descriptionTextInputOfNews.check(matches(withText(exampleOfNews.description)));
         }
     }
 
     public static void saveNews() throws InterruptedException {
         Allure.step("Сохранить новость");
         NewsCreationAndEditingScreen.saveButtonOfNews.perform(click());
-        Thread.sleep(3000);
-//        NewsScreen.addNewsButton.check(matches(isDisplayed()));
     }
 
     public static void сancelSavingNews() {

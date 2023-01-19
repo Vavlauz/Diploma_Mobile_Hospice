@@ -35,7 +35,7 @@ public class QuotesTests {
 
     @Test
     @DisplayName("Наличие цитат в блоке цитат о хосписе")
-    public void quotesShouldBeVisibleInQuotesBlock() throws InterruptedException {
+    public void quotesShouldBeVisibleInQuotesBlock() {
         String quoteTextTitle1 = "«Хоспис для меня - это то, каким должен быть мир.\"";
         String quoteTextTitle2 = "Хоспис в своем истинном понимании - это творчество";
         String quoteTextTitle3 = "“В хосписе не работают плохие люди” В.В. Миллионщикова\"";
@@ -47,28 +47,20 @@ public class QuotesTests {
         String quoteTextTitle8 = "Важен каждый!";
         ControlPanelSteps.goToQuotesBlock();
         QuotesSteps.findQuoteWith(quoteTextTitle1);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle2);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle3);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle4);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle5);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle8);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle7);
-        Thread.sleep(3000);
         QuotesSteps.findQuoteWith(quoteTextTitle6);
     }
 
     @Test // в одиночку проходит
     @DisplayName("shouldBeFullContentInEachQuote")
-    public void shouldBeFullContentInEachQuote() throws InterruptedException {
+    public void shouldBeFullContentInEachQuote() {
         ControlPanelSteps.goToQuotesBlock();
         QuotesSteps.openOrCloseFirstQuote();
-        Thread.sleep(3000);
         QuotesSteps.checkThatFirstQuoteContentIsFull();
     }
 

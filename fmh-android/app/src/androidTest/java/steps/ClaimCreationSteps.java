@@ -22,6 +22,7 @@ import androidx.test.rule.ActivityTestRule;
 
 import org.hamcrest.Matchers;
 
+import additional.ExampleOfClaims;
 import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
@@ -31,74 +32,51 @@ import screenElements.ClaimsScreen;
 
 public class ClaimCreationSteps {
 
-    public static void fillInTheClaimFields(String emptyTitle, String title, String emptyExecutor, String choiceOfExecutor, String chosenExecutor, String executor, String emptyDate, String emptyTime, String withDialPadOrTextInput, String saveOrCancelTime, String emptyDescription, String description) throws InterruptedException {
+    public enum Claim {
+
+    }
+
+    public static void fillInTheClaimFields(ExampleOfClaims exampleOfClaims) throws InterruptedException {
         Allure.step("Заполнение полей при создании заявки");
-        // определяется позиция дочернего элемента
-//        Integer executorPosition = null;
-//        if (chosenExecutor == "Smirnov Petr Petrovich") {
-//            executorPosition = 0;
-//        } else if (chosenExecutor == "Ivanov Danil Danilovich") {
-//            executorPosition = 1;
-//        } else if (chosenExecutor == "Petrov Egor Egorovich") {
-//            executorPosition = 2;
-//        } else if (chosenExecutor == "Sidorov Dmitri Dmitrievich") {
-//            executorPosition = 3;
-//        } else if (chosenExecutor == "Uzhakin Vadim Vladimirovich") {
-//            executorPosition = 4;
-//        } else if (chosenExecutor == "Netology Diplom QAMID") {
-//            executorPosition = 5;
-//        }
         // заполнение поля "Тема"
-        if (emptyTitle == "no") {
-            ClaimCreationAndEditingScreen.titleTextInputOfClaim.perform(replaceText(title));
-            Thread.sleep(2000);
-//            ClaimCreationAndEditingScreen.titleTextInputOfClaim.check(matches(withText(title)));
+        if (exampleOfClaims.title != null) {
+            ClaimCreationAndEditingScreen.titleTextInputOfClaim.perform(replaceText(exampleOfClaims.title));
+            MainHelper.elementWaiting(withText(exampleOfClaims.title), 3000);
         }
         // заполнение поля "Исполнитель"
-        if (emptyExecutor == "no") {
-            if (choiceOfExecutor == "yes") {
-//                ClaimCreationAndEditingScreen.buttonForShowingDropdownMenu.perform(click());
-                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(chosenExecutor));
-                Thread.sleep(2000);
-//                Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(executorPosition).perform(ViewActions.click());
+            if (exampleOfClaims.chosenExecutor != null) {
+                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(exampleOfClaims.chosenExecutor));
             } else {
-                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(executor));
-                Thread.sleep(2000);
-                ClaimCreationAndEditingScreen.executorTextInput.check(matches(withText(executor)));
+                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(exampleOfClaims.executor));
+                ClaimCreationAndEditingScreen.executorTextInput.check(matches(withText(exampleOfClaims.executor)));
             }
-        }
+
         // заполнение поля "Дата"
-        if (emptyDate == "no") {
+        if (exampleOfClaims.emptyDate == "no") {
             ClaimCreationAndEditingScreen.dateInPlanOfClaim.perform(click());
-            Thread.sleep(2000);
             ClaimCreationAndEditingScreen.okButton.perform(click());
         }
         // заполнение поля "Время"
-        if (emptyTime == "no") {
-            if (withDialPadOrTextInput == "dial") {
+        if (exampleOfClaims.emptyTime == "no") {
+            if (exampleOfClaims.withDialPadOrTextInput == "dial") {
                 ClaimCreationAndEditingScreen.timeInPlanOfClaim.perform(click());
-                if (saveOrCancelTime == "save") {
+                if (exampleOfClaims.saveOrCancelTime == "save") {
                     ClaimCreationAndEditingScreen.okButton.perform(click());
                 } else {
                     ClaimCreationAndEditingScreen.cancelButton.perform(click());
                 }
             } else {
                 ClaimCreationAndEditingScreen.timeInPlanOfClaim.perform(click());
-                Thread.sleep(2000);
                 ClaimCreationAndEditingScreen.buttonForSwitchToTextInput.perform(click());
-                Thread.sleep(2000);
                 onView(withClassName(Matchers.equalTo(TimePicker.class.getName()))).perform(PickerActions.setTime(6, 45));
-                Thread.sleep(2000);
                 ClaimCreationAndEditingScreen.okButton.perform(click());
-                Thread.sleep(2000);
                 ClaimCreationAndEditingScreen.timeInPlanOfClaim.check(matches(withText("06:45")));
             }
         }
         // заполнение поля "Описание"
-        if (emptyDescription == "no") {
-            ClaimCreationAndEditingScreen.descriptionTextInputOfClaim.perform(replaceText(description));
-            Thread.sleep(2000);
-            ClaimCreationAndEditingScreen.descriptionTextInputOfClaim.check(matches(withText(description)));
+        if (exampleOfClaims.description != null) {
+            ClaimCreationAndEditingScreen.descriptionTextInputOfClaim.perform(replaceText(exampleOfClaims.description));
+            ClaimCreationAndEditingScreen.descriptionTextInputOfClaim.check(matches(withText(exampleOfClaims.description)));
         }
     }
 
@@ -116,11 +94,10 @@ public class ClaimCreationSteps {
         onView(withText("Enter a valid time")).check(matches(isDisplayed()));
     }
 
-    public static void saveClaim() throws InterruptedException {
+    public static void saveClaim() {
         Allure.step("Сохранить заявку");
         ClaimCreationAndEditingScreen.saveButtonOfClaim.perform(click());
-        Thread.sleep(2000);
-//        ClaimsScreen.titleOfClaimsBlock.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withText("Claims"), 3000);
     }
 
     public static void cancelSavingOfClaim() {

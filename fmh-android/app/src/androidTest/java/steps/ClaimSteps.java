@@ -1,17 +1,23 @@
 package steps;
 
-import static org.hamcrest.core.AllOf.allOf;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.swipeUp;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
+import static org.hamcrest.core.AllOf.allOf;
 import static additional.MainHelper.isDisplayedWithSwipe;
+import static additional.MainHelper.swipeToBottom;
 
+
+import androidx.test.espresso.contrib.RecyclerViewActions;
+
+import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 import screenElements.ClaimScreen;
@@ -43,20 +49,20 @@ public class ClaimSteps {
     }
 
     public static void scrollToLastComment() {
-        Allure.step("Скрол к последнему комментарию (которого НЕТ)");
-        isDisplayedWithSwipe(onView(withText("hjdwdwqfrgDEFEyveEUBU")), 4, true);
-        ClaimScreen.buttonToAddComment.check(matches(isDisplayed()));
+        Allure.step("Скрол к последнему комментарию");
+        swipeToBottom();
+        MainHelper.elementWaiting(withId(R.id.add_comment_image_button), 3000);
     }
 
     public static void initiateCommentCreation() {
         Allure.step("Нажать на кнопу добавления пустого комментария");
         ClaimScreen.buttonToAddComment.perform(click());
-//        CommentScreen.saveButton.check(matches(isDisplayed()));
     }
 
     public static void isCommentDisplayed(String comment) {
-        Allure.step("Поиск комментария");
-        onView(withText(comment)).check(matches(isDisplayed()));
+        Allure.step("Поиск последнего комментария");
+        swipeToBottom();
+        MainHelper.elementWaiting(withText(comment), 3000);
     }
 
     public static void commentDoesNotExist(String comment) {

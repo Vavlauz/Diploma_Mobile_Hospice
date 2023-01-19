@@ -12,6 +12,7 @@ import static screenElements.NewsScreen.deleteFirstNewsButton;
 import static screenElements.NewsScreen.lastNewsItemButton;
 import static screenElements.NewsScreen.openFirstNewsInNewsBlock;
 
+import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
 import screenElements.NewsCreationAndEditingScreen;
 import screenElements.NewsScreen;
@@ -26,22 +27,14 @@ public class NewsSteps {
         NewsCreationAndEditingScreen.titleOfNewsCreatingWindow.check(matches(isDisplayed()));
     }
 
-    public static void initiateNewsEditing(String title) throws InterruptedException {
+    public static void initiateNewsEditing(String title) {
         Allure.step("Переход к редактированию ранее созданной новости");
-//        NewsScreen.editNewsButton.perform(click());
-//        Thread.sleep(3000);
-//        NewsScreen.addNewsButton.check(matches(isDisplayed()));
-//        onView(withId(R.id.sort_news_material_button)).perform(click());
-//        MainHelper.isDisplayedWithSwipe(onView(allOf(withId(R.id.news_item_material_card_view), hasDescendant(withText(title + "2")))), 1, true);
-//        onView(allOf(withId(R.id.edit_news_item_image_view), hasSibling(withText(title + "2")))).perform(click());
-//        NewsCreationAndEditingScreen.titleOfEditingNewsWindow.check(matches(isDisplayed()));
         goToEditingModeForNews();
     }
 
-    public static void checkNewsData(String title, String description) throws InterruptedException {
+    public static void checkNewsData(String title, String description) {
         Allure.step("Убеждаемся, что соданная новость содержит ранее введенные данные");
         goToEditingModeForNews();
-        Thread.sleep(3000);
         onView(withText(title)).check(matches(isDisplayed()));
         onView(withText(description)).check(matches(isDisplayed()));
 
@@ -55,7 +48,7 @@ public class NewsSteps {
         NewsScreen.firstNewsItemDate.check(matches(withText(currentDate)));
     }
 
-    public static void checkThatNewsDoesNotExist(String title, String description) throws InterruptedException {
+    public static void checkThatNewsDoesNotExist(String title, String description) {
         Allure.step("Проверка того, что новость не существует в блоке новостей");
         NewsScreen.editNewsButton.perform(click());
         NewsScreen.firstCardNews.perform(click());
@@ -70,10 +63,9 @@ public class NewsSteps {
         NewsScreen.firstNewsItemDescription.check(matches(not(withText(description))));
     }
 
-//    Не стал использовать title т.к. он недоступен в свернутом состоянии
     public static void deleteNews(String title) {
         Allure.step("Удалить ранее созданную новость");
-//        onView(allOf(withText(title + "2"),withParentIndex(0))).check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withText(title + "2"), 3000);
         deleteFirstNewsButton.perform(click());
         NewsScreen.okButton.check(matches(isDisplayed()));
         // подтверждаем удаление новости
@@ -83,12 +75,12 @@ public class NewsSteps {
     }
 
     //(Не стал включать в этот метод проверку title, т.к. приходится менять значение с каждым новым тестом)
-    public static void checkNewsStatus(String title, String currentDate, String finalStatus) throws InterruptedException {
+    public static void checkNewsStatus(String title, String currentDate, String finalStatus) {
         Allure.step("Проверить статус новости");
         NewsScreen.editNewsButton.perform(click());
-//        onView(allOf(withText(title + "2"), withParentIndex(1))).check(matches(isDisplayed()));
         lastNewsItemButton.perform(click());
         NewsCreationAndEditingScreen.titleOfEditingNewsWindow.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withText(title + "2"), 3000);
         // проверяем статус
         statusOfNewsSwitcher.check(matches(withText(finalStatus)));
         // на всякий случай проверяем дату создания и публикации (текущая)

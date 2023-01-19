@@ -103,4 +103,5 @@ dependencies {
     androidTestImplementation 'io.qameta.allure:allure-kotlin-android:2.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
 }

@@ -2,6 +2,9 @@ package steps;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.repeatedlyUntil;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
+import static androidx.test.espresso.action.ViewActions.swipeDown;
 import static androidx.test.espresso.action.ViewActions.swipeUp;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
@@ -9,14 +12,18 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
 import static androidx.test.espresso.matcher.ViewMatchers.isChecked;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isNotChecked;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 
+import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
 import androidx.test.espresso.Espresso;
+import androidx.test.espresso.IdlingResource;
+import androidx.test.espresso.contrib.RecyclerViewActions;
 
 import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
@@ -35,7 +42,7 @@ public class ClaimsSteps {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        ClaimCreationAndEditingScreen.titleOfClaimsCreatingPage.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withText("Creating"), 3000);
     }
 
     public static void checkCreatedClaimInClaimsBlock(String title) {
@@ -63,16 +70,24 @@ public class ClaimsSteps {
 
     public static void checkContentOfFirstClaimInClaimsBlock() {
         Allure.step("Проверка содержимого первой заявки в блоке заявок");
-        ClaimsScreen.firstClaimTopicInClaimsBlock.check(matches(isDisplayed()));
-        ClaimsScreen.executorNameOfFirstClaim.check(matches(isDisplayed()));
-        ClaimsScreen.planDateOfFirstClaim.check(matches(isDisplayed()));
-        ClaimsScreen.planTimeOfFirstClaim.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withId(R.id.description_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.executor_name_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.plane_date_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.plan_time_text_view), 3000);
+    }
+
+    public static void checkContentOfFirstClaimInClaimsBlockRolledUp() {
+        Allure.step("Проверка содержимого первой заявки в блоке заявок в свернутом состоянии");
+        MainHelper.elementWaiting(withId(R.id.description_material_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.executor_name_material_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.plan_date_material_text_view), 3000);
+        MainHelper.elementWaiting(withId(R.id.plan_time_material_text_view), 3000);
     }
 
     public static void goToFirstClaimFromClaimsBlock() {
         Allure.step("Переход к первой заявке из блока заявок");
         ClaimsScreen.firstClaimCard.perform(click());
-//        ClaimScreen.titleTextOfClaim.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withId(R.id.title_text_view), 3000);
     }
 
     public static void initiateClaimFiltering() {
@@ -90,32 +105,43 @@ public class ClaimsSteps {
         ClaimsScreen.titleOfClaimsBlock.check(matches(isDisplayed()));
     }
 
+    public static void checkClaimStatus(String status) {
+        Allure.step("Проверка статус претензии");
+        String claimStatus = MainHelper.Text.getText(onView(withId(R.id.status_label_text_view)));
+        assertEquals(status, claimStatus);
+    }
+
+    public String getClaimTime() {
+        Allure.step("Получить время претензии");
+        return MainHelper.Text.getText(onView(withId(R.id.plan_time_text_view)));
+    }
+
     public static void checkThatFirstFiveClaimsHaveOpenStatus() throws InterruptedException {
         Allure.step("Проверка открытого статуса у заявок");
-        // провека первых трех заявок
+        // провека первых пяти заявок
         for (int claimPosition = 0; claimPosition < 3; claimPosition++) {
             onView(MainHelper.withIndex(withId(R.id.claim_list_card), claimPosition)).perform(click());
-            Thread.sleep(5000);
-            ClaimScreen.openStatus.check(matches(isDisplayed()));
+            MainHelper.elementWaiting(withId(R.id.status_icon_image_view), 3000);
+            checkClaimStatus("Open");
             Espresso.pressBack();
-            Thread.sleep(5000);
         }
-        // скрол до 3й заявки
-        onView(allOf(withId(R.id.claim_list_recycler_view), isDisplayed())).perform(actionOnItemAtPosition(2, swipeUp()));
-        // проверка 4й заявки
-        onView(MainHelper.withIndex(withId(R.id.claim_list_card), 3)).perform(click());
-        Thread.sleep(5000);
-//        ClaimScreen.openStatus.check(matches(isDisplayed()));
+//        // скрол до 3й заявки
+        onView(MainHelper.withIndex(withId(R.id.claim_list_card), 2)).perform(click());
+        MainHelper.elementWaiting(withId(R.id.status_icon_image_view), 3000);
+        checkClaimStatus("Open");
         Espresso.pressBack();
-        Thread.sleep(5000);
-        // повторный скрол до 3й заявки
+//        // проверка 4й заявки
+        onView(MainHelper.withIndex(withId(R.id.claim_list_card), 3)).perform(click());
+        MainHelper.elementWaiting(withId(R.id.status_icon_image_view), 3000);
+        checkClaimStatus("Open");
+        Espresso.pressBack();
+//        // повторный скрол до 3й заявки
         onView(allOf(withId(R.id.claim_list_recycler_view), isDisplayed())).perform(actionOnItemAtPosition(2, swipeUp()));
         // проверка 5й заявки
-        onView(MainHelper.withIndex(withId(R.id.claim_list_card), 4)).perform(click());
-        Thread.sleep(5000);
-        ClaimScreen.openStatus.check(matches(isDisplayed()));
+        onView(withId(R.id.claim_list_recycler_view)).perform(RecyclerViewActions.scrollToPosition(4),click());
+        MainHelper.elementWaiting(withId(R.id.status_icon_image_view), 3000);
+        checkClaimStatus("Open");
         Espresso.pressBack();
-        Thread.sleep(5000);
     }
 
 }

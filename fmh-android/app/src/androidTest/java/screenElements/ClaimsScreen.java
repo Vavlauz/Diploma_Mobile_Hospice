@@ -3,6 +3,7 @@ package screenElements;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.withParentIndex;
 
 import androidx.test.espresso.ViewInteraction;
 
@@ -39,4 +40,9 @@ public class ClaimsScreen {
     public static ViewInteraction open = onView(withId(R.id.item_filter_open));
     public static ViewInteraction okButton = onView(withId(R.id.claim_list_filter_ok_material_button));
 
+
+    public ViewInteraction claimList(int index) {
+        return onView(MainHelper.withIndex(withId(R.id.claim_list_card), index));
+    }
 }
+

@@ -6,17 +6,19 @@ import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 import androidx.test.rule.ActivityTestRule;
 
+import additional.MainHelper;
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import screenElements.ClaimScreen;
 import screenElements.CommentScreen;
+import ru.iteco.fmhandroid.R;
 
 public class CommentSteps {
 
@@ -29,7 +31,12 @@ public class CommentSteps {
     public static void saveComment() {
         Allure.step("Сохранить комментарий");
         CommentScreen.saveButton.perform(click());
-//        ClaimScreen.titleTextOfClaim.check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withId(R.id.title_text_view), 3000);
+    }
+
+    public static void notSaveComment() {
+        Allure.step("Сохранить комментарий");
+        CommentScreen.saveButton.perform(click());
     }
 
     public static void cancelCommentCreation() {

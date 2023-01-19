@@ -13,6 +13,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import additional.ExampleOfClaims;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
@@ -43,176 +44,152 @@ public class ClaimCreationTest {
     @Test // тест длительно выполняется из-за огромного количества заявок
     @DisplayName("Создание заявки при вводе валидных данных во все поля (кириллические символы, текущая дата и текущее время в формате циферблата)")
     public void shouldCreateClaimWithValidData() throws InterruptedException {
-        String emptyTitle = "no";
         String title = "Diplom QAm1";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
         String chosenExecutor = "Netology Diplom QAMID";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
     }
 
     @Test // тест длительно выполняется из-за огромного количества заявок
     @DisplayName("Ввод 49 символов в поле \"Тема\" при создании заявки")
     public void shouldInput49SymbolsInTitleDuringClaimCreation() throws InterruptedException {
-        String emptyTitle = "no";
-        String title49 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom007";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
+        String title49 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom009";
         String chosenExecutor = "Netology Diplom QAMID";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title49, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title49,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title49);
     }
 
     @Test // тест длительно выполняется из-за огромного количества заявок
     @DisplayName("Ввод 50 символов в поле \"Тема\" при создании заявки")
     public void shouldInput50SymbolsInTitleDuringClaimCreation() throws InterruptedException {
-        String emptyTitle = "no";
-        String title = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom0004";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
+        String title50 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom0008";
         String chosenExecutor = "Netology Diplom QAMID";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
-        ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title50,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
+        ClaimsSteps.checkCreatedClaimInClaimsBlock(title50);
     }
 
     @Test // тест падает из-за того, что программа не может ввести 51 символ
     @DisplayName("Попытка ввода 51 символа в поле \"Тема\" при создании заявки")
     public void shouldInput51SymbolsInTitleDuringClaimCreation() throws InterruptedException {
-        String emptyTitle = "no";
-        String title51 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM00051";
-        String titleOfCreatedClaim = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM0005";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
+        String title51 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM00061";
+        String titleOfCreatedClaim = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM0006";
         String chosenExecutor = "Ivanov Ivan Ivanovich";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title51, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title51,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(titleOfCreatedClaim);
     }
 
-    @Test
+    @Test  // в одиночку проходит
     @DisplayName("Пустой ввод в поле \"Тема\" при создании заявки")
     public void shouldTryCreateClaimWithEmptyTitle() throws InterruptedException {
-        String emptyTitle = "yes";
-        String title = "no";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
+        String title = "";
         String chosenExecutor = "Смирнов Петр Петрович";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
-        ClaimCreationSteps.checkMessageThatFieldsShouldBeFilled(activityTestRule);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
+        checkMessageThatFieldsShouldBeFilled(activityTestRule);
     }
 
-    @Test
+    @Test // в одиночку проходит
     @DisplayName("Пустой ввод в поле \"Описание\" при создании заявки")
     public void shouldTryCreateClaimWithEmptyDescription() throws InterruptedException {
-        String emptyTitle = "no";
         String title = "QAMIDK7814";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
         String chosenExecutor = "Смирнов Петр Петрович";
         String executor = "yes";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "yes";
-        String description = "-";
+        String description = "";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
-        ClaimCreationSteps.saveClaim();
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
+        saveClaim();
         checkMessageThatFieldsShouldBeFilled(activityTestRule);
     }
 
-    @Test
+    @Test // в одиночку проходит
     @DisplayName("Отмена выбора даты при создании заявки")
     public void shouldTryCreateClaimWithEmptyDate() throws InterruptedException {
-        String emptyTitle = "no";
         String title = "QAMIDK78lFky";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
         String chosenExecutor = "Иванов Данил Данилович";
         String executor = "yes";
         String emptyDate = "yes";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         checkMessageThatFieldsShouldBeFilled(activityTestRule);
     }
 
-    @Test
+    @Test // в одиночку проходит
     @DisplayName("Отмена выбора времени в разделе циферблат при создании заявки")
     public void shouldTryCreateClaimWithCancelSavingOfTime() throws InterruptedException {
-        String emptyTitle = "no";
         String title = "QAMIDK78gFct";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
         String chosenExecutor = "Ivanov Danil Danilovich";
         String executor = "yes";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "cancel";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
         ClaimCreationSteps.checkMessageThatFieldsShouldBeFilled(activityTestRule);
 
@@ -221,48 +198,40 @@ public class ClaimCreationTest {
     @Test // тест длительно выполняется из-за огромного количества заявок, лучше запускать в одиночку
     @DisplayName("Пустой ввод в поле \"Исполнитель\" при создании заявки")
     public void shouldTryCreateClaimWithEmptyExecutor() throws InterruptedException {
-        String emptyTitle = "no";
-        String title = "QAMID345Hpik";
-        String emptyExecutor = "yes";
-        String choiceOfExecutor = "no";
-        String chosenExecutor = "no";
+        String title = "QAMID345Hpikst";
+        String chosenExecutor = "";
         String executor = "no";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "dial";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
-        Thread.sleep(3000);
         ClaimsSteps.goToCreatedClaim(title);
-        Thread.sleep(3000);
         ClaimSteps.checkThatTheExecutorIsNotAssigned();
     }
 
     @Test // тест длительно выполняется из-за огромного количества заявок
     @DisplayName("Ручной ввод часов и минут при при создании заявки")
     public void shouldCreateClaimWithManualTimeInput() throws InterruptedException {
-        String emptyTitle = "no";
-        String title = "QAMID10s2";
-        String emptyExecutor = "no";
-        String choiceOfExecutor = "yes";
+        String title = "QAMID10s23";
         String chosenExecutor = "Netology Diplom QAMID";
         String executor = "yes";
         String emptyDate = "no";
         String emptyTime = "no";
         String withDialPadOrTextInput = "text input";
         String saveOrCancelTime = "save";
-        String emptyDescription = "no";
         String description = "New description";
         // будет введено время: 06:45 (заложено в методе, также в методе есть проверка, что введено именно это время)
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ClaimCreationSteps.fillInTheClaimFields(emptyTitle, title, emptyExecutor, choiceOfExecutor, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
         ClaimsSteps.checkTimeOfCreatedClaimInClaimsBlock(title, "06:45");

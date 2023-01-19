@@ -3,11 +3,6 @@ package tests;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.rule.ActivityTestRule;
 
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,7 +43,7 @@ public class AuthorizationTests {
 
     @Test
     @DisplayName("Вход в личный кабинет с пустыми полями")
-    public void shouldTryLogInWithEmptyField() throws InterruptedException {
+    public void shouldTryLogInWithEmptyField() {
         AuthorizationSteps.clickSignInButton();
         AuthorizationSteps.checkMessageThatFieldShouldNotBeEmpty(activityTestRule);
     }

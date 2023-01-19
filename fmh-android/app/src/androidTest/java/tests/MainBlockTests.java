@@ -55,7 +55,7 @@ public class MainBlockTests {
 
     @Test
     @DisplayName("Наличие заявок в разделе \"Заявки\" в главном блоке")
-    public void claimsShouldBeVisibleInClaimsPartOnMainBlock() throws InterruptedException {
+    public void claimsShouldBeVisibleInClaimsPartOnMainBlock() {
         MainSteps.expandOrHideNewsPart();
         MainSteps.claimTitleIsDisplayedWithSwipe(0);
         MainSteps.claimTitleIsDisplayedWithSwipe(1);
@@ -63,18 +63,16 @@ public class MainBlockTests {
 
     @Test // нестабильный тест в эмуляторе (отдельно проходит)
     @DisplayName("Полнота информации заявки в главном блоке (в свернутом состоянии)")
-    public void shouldBeFullContentOfNotExpandedClaimInMainBlock() throws InterruptedException {
+    public void shouldBeFullContentOfNotExpandedClaimInMainBlock() {
         MainSteps.expandOrHideNewsPart();
-        Thread.sleep(3000);
         MainSteps.checkContentOfFirstClaimInMainBlock();
     }
 
     @Test // нестабильный тест в эмуляторе (отдельно проходит)
     @DisplayName("Переход к заявке в главном блоке")
-    public void shouldGoToFirstClaimInMainBlock() throws InterruptedException {
+    public void shouldGoToFirstClaimInMainBlock() {
         MainSteps.expandOrHideNewsPart();
         MainSteps.goToFirstClaimFromMainBlock();
-        Thread.sleep(3000);
         ClaimSteps.checkBasicElementsOfClaim();
     }
 }

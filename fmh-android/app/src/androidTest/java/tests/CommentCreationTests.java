@@ -38,45 +38,40 @@ public class CommentCreationTests {
     @Test // тест проходит, но падает при запуске всех тестов,также нужно постоянно изменять comment,
          // чтобы он отличался от других
     @DisplayName("Добавление нового комментария заявки с введением валидных данных")
-    public void shouldCreateCommentWithValidData() throws InterruptedException {
-        String comment = "QA Midgdsr2";
+    public void shouldCreateCommentWithValidData() {
+        String comment = "QA Midgdsr8";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.goToFirstClaimFromClaimsBlock();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.initiateCommentCreation();
         CommentSteps.fillInTheCommentField(comment);
         CommentSteps.saveComment();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.isCommentDisplayed(comment);
     }
 
     @Test // нестабильный тест при запуске всех тестов в эмуляторе (отдельно проходит)
     @DisplayName("Пустой ввод при добавлении нового комментария к заявке")
-    public void shouldTryCreateCommentWithEmptyField() throws InterruptedException {
+    public void shouldTryCreateCommentWithEmptyField() {
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.goToFirstClaimFromClaimsBlock();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.initiateCommentCreation();
-        CommentSteps.saveComment();
+        CommentSteps.notSaveComment();
         CommentSteps.checkMessageThatFieldShouldBeFilled(activityTestRule);
     }
 
     @Test  // нестабильный тест при запуске всех тестов на эмуляторе (отдельно проходит),также нужно постоянно изменять comment,
     // чтобы он отличался от других
     @DisplayName("Отмена добавления нового комментария")
-    public void shouldCancelCommentCreation() throws InterruptedException {
-        String comment = "QA Midfrr1";
+    public void shouldCancelCommentCreation() {
+        String comment = "QA Midfrr12";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.goToFirstClaimFromClaimsBlock();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.initiateCommentCreation();
         CommentSteps.fillInTheCommentField(comment);
         CommentSteps.cancelCommentCreation();
-        Thread.sleep(3000);
         ClaimSteps.scrollToLastComment();
         ClaimSteps.commentDoesNotExist(comment);
     }

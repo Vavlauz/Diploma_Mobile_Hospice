@@ -33,13 +33,12 @@ public class ClaimsFilteringTests {
         AuthorizationSteps.logIn("login2", "password2");
     }
 
-    @Test  // крайне нестабильный тест - падает по техническим причинам (проблемы со свайпом)
+    @Test // в одиночку проходит
     @DisplayName("Выбран статус \"Открыта\" при фильтрации заявок")
     public void openStatusIsChosenDuringClaimsFiltering() throws InterruptedException {
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateClaimFiltering();
         ClaimsSteps.сhooseOnlyOpenStatusIfOpenAndInProgressStatusesAreChosenInitially();
-        Thread.sleep(10000);
         ClaimsSteps.checkThatFirstFiveClaimsHaveOpenStatus();
     }
 

@@ -26,14 +26,11 @@ public class ControlPanelSteps {
         MainScreen.tradeMark.check(matches(isDisplayed()));
     }
 
-    public static void goToNewsBlock() throws InterruptedException {
+    public static void goToNewsBlock() {
         Allure.step("Переход в блок \"Новости\"");
         MainScreen.menuButton.perform(click());
-        Thread.sleep(3000);
         MainScreen.newsOfMenu.check(matches(isDisplayed()));
-        Thread.sleep(3000);
         MainScreen.newsOfMenu.perform(click());
-        Thread.sleep(3000);
         NewsScreen.titleOfNewsBlock.check(matches(isDisplayed()));
     }
 

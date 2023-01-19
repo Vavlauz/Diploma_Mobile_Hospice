@@ -11,10 +11,6 @@ import ru.iteco.fmhandroid.R;
 
 public class NewsCreationAndEditingScreen {
 
-    // Элементы при создании/редактировании новости
-    String iconForCategoryChoice = "text_input_end_icon";
-
-
     public static ViewInteraction titleOfEditingNewsWindow = onView(withText("Editing"));
     public static ViewInteraction titleOfNewsCreatingWindow = onView(withId(R.id.custom_app_bar_sub_title_text_view));
     public static ViewInteraction categoryTextInputOfNews = onView(withId(R.id.news_item_category_text_auto_complete_text_view));
