@@ -62,30 +62,30 @@ public class NewsCreationAndEditingSteps {
             categoryPosition = 7;
         }
         // заполнение поля "Категория"
-        if (exampleOfNews.emptyCategory == "no") {
-            if (exampleOfNews.choiceOfCategory == "yes") {
+        if (exampleOfNews.emptyCategory == false) {
+            if (exampleOfNews.choiceOfCategory == true) {
                 NewsCreationAndEditingScreen.buttonForShowingDropdownMenu.perform(click());
                 // выбор категории (источник: https://stackoverflow.com/questions/29438569/dropdown-value-selection-using-espresso-android-with-dynamic-element-ids)
                 Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(categoryPosition).perform(ViewActions.click());
                 NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(exampleOfNews.chosenCategory + "2"));
             } else {
-                NewsCreationAndEditingScreen.categoryTextInputOfNews.perform(replaceText(exampleOfNews.category));
+                NewsCreationAndEditingScreen.categoryTextInputOfNews.perform(replaceText(String.valueOf(exampleOfNews.category)));
                 NewsCreationAndEditingScreen.categoryTextInputOfNews.check(matches(isDisplayed()));
             }
         } else {
-            NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(exampleOfNews.title));
-            NewsCreationAndEditingScreen.titleTextInputOfNews.check(matches(withText(exampleOfNews.title)));
+            NewsCreationAndEditingScreen.titleTextInputOfNews.perform(replaceText(String.valueOf(exampleOfNews.title)));
+            NewsCreationAndEditingScreen.titleTextInputOfNews.check(matches(withText(String.valueOf(exampleOfNews.title))));
         }
         // заполнение поля "Дата"
-        if (exampleOfNews.emptyDate == "no") {
+        if (exampleOfNews.emptyDate == false) {
             publicationDateTextInputOfNews.perform(click());
             NewsCreationAndEditingScreen.okButton.perform(click());
         }
         // заполнение поля "Время"
-        if (exampleOfNews.emptyTime == "no") {
-            if (exampleOfNews.withDialPadOrTextInput == "dial") {
+        if (exampleOfNews.emptyTime == false) {
+            if (exampleOfNews.clockEnter == ExampleOfNews.ClockEnter.DIAL) {
                 NewsCreationAndEditingScreen.timeTextInputOfNews.perform(click());
-                if (exampleOfNews.saveOrCancelTime == "save") {
+                if (exampleOfNews.timeShift == ExampleOfNews.TimeShift.SAVE) {
                     NewsCreationAndEditingScreen.okButton.perform(click());
                 } else {
                     NewsCreationAndEditingScreen.cancelButton.perform(click());

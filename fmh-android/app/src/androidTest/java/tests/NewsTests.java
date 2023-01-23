@@ -53,19 +53,19 @@ public class NewsTests {
     @Test // в одиночку проходит
     @DisplayName("Удаление новости")
     public void shouldDeleteNews() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();

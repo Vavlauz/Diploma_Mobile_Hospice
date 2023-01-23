@@ -40,19 +40,19 @@ public class NewsCreationTests {
     @Test // в одиночку проходит
     @DisplayName("Создание новости при заполнении всех полей валидными данными (кириллические символы,текущая дата, текущее время в формате циферблата)")
     public void shouldCreateNewsWithTextInputInCategoryAndValidData() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Благодарность";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "Запись";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();
@@ -62,19 +62,19 @@ public class NewsCreationTests {
     @Test // тест проходит на эмуляторе (даже с удалением), нестабильный при запуске всех тестов
     @DisplayName("Выбор категории \"Зарплата\" из списка с автозаполнением заголовка при создании новости")
     public void shouldCreateNewsWithCategoryChoiceAndValidData() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "Запись";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();
@@ -87,20 +87,20 @@ public class NewsCreationTests {
     @Test  // БАГ!!! Новость не появляется в блоке новостей
     @DisplayName("Ручной ввод часов и минут при при создании новости")
     public void shouldCreateNewsWithManualTimeInput() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.TEXT;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Массаж";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "textInput";
-        String saveOrCancelTime = "save";
         String description = "New description";
         // будет введено время: 06:44 (заложено в методе, также в методе есть проверка, что введено именно это время)
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();
@@ -112,19 +112,19 @@ public class NewsCreationTests {
     @Test  // не самый стабильный тест (не проходит из-за ранее созданных новостей)
     @DisplayName("Отмена создания новости")
     public void shouldCancelNewsCreation() {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.сancelSavingNews();
         ControlPanelSteps.goToNewsBlock();
@@ -134,19 +134,19 @@ public class NewsCreationTests {
     @Test
     @DisplayName("Не выбрана категория при создании новости")
     public void shouldCreateNewsWithEmptyCategory() throws InterruptedException {
-        String emptyCategory = "yes";
-        String choiceOfCategory = "no";
+        boolean emptyCategory = true;
+        boolean choiceOfCategory = false;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "Super News";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         NewsCreationAndEditingSteps.checkMessageThatFieldShouldBeFilled(activityTestRule);
@@ -155,19 +155,19 @@ public class NewsCreationTests {
     @Test
     @DisplayName("Пустой ввод в поле \"Описание\" при создании новости")
     public void shouldCreateNewsWithEmptyDescription() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "Super News";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         NewsCreationAndEditingSteps.checkMessageThatFieldShouldBeFilled(activityTestRule);
@@ -176,19 +176,19 @@ public class NewsCreationTests {
     @Test
     @DisplayName("Cоздание новости без выбора даты")
     public void shouldCreateNewsWithEmptyDate() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = true;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "Super News";
-        String emptyDate = "yes";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         NewsCreationAndEditingSteps.checkMessageThatFieldShouldBeFilled(activityTestRule);
@@ -219,19 +219,19 @@ public class NewsCreationTests {
     @Test
     @DisplayName("Отмена выбора времени в разделе циферблат при создании новости")
     public void shouldCancelSavingTimeWhenNewsAreBeingCreated() throws InterruptedException {
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = true;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.CANCEL;
         String chosenCategory = "Зарплата";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "cancel";
         String description = "New description";
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         NewsCreationAndEditingSteps.checkMessageThatFieldShouldBeFilled(activityTestRule);

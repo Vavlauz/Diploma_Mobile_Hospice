@@ -1,6 +1,5 @@
 package steps;
 
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -35,8 +34,8 @@ public class NewsSteps {
     public static void checkNewsData(String title, String description) {
         Allure.step("Убеждаемся, что соданная новость содержит ранее введенные данные");
         goToEditingModeForNews();
-        onView(withText(title)).check(matches(isDisplayed()));
-        onView(withText(description)).check(matches(isDisplayed()));
+        MainHelper.elementWaiting(withText(title + "2"), 3000);
+        MainHelper.elementWaiting(withText(description), 3000);
 
     }
 
@@ -75,14 +74,14 @@ public class NewsSteps {
     }
 
     //(Не стал включать в этот метод проверку title, т.к. приходится менять значение с каждым новым тестом)
-    public static void checkNewsStatus(String title, String currentDate, String finalStatus) {
+    public static void checkNewsStatus(String title, String currentDate, String status) {
         Allure.step("Проверить статус новости");
         NewsScreen.editNewsButton.perform(click());
         lastNewsItemButton.perform(click());
         NewsCreationAndEditingScreen.titleOfEditingNewsWindow.check(matches(isDisplayed()));
         MainHelper.elementWaiting(withText(title + "2"), 3000);
         // проверяем статус
-        statusOfNewsSwitcher.check(matches(withText(finalStatus)));
+        statusOfNewsSwitcher.check(matches(withText(status)));
         // на всякий случай проверяем дату создания и публикации (текущая)
         publicationDateTextInputOfNews.check(matches(withText(currentDate)));
     }

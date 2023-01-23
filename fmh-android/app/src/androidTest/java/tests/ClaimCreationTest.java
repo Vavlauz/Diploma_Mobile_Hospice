@@ -46,15 +46,15 @@ public class ClaimCreationTest {
     public void shouldCreateClaimWithValidData() throws InterruptedException {
         String title = "Diplom QAm1";
         String chosenExecutor = "Netology Diplom QAMID";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
@@ -65,15 +65,15 @@ public class ClaimCreationTest {
     public void shouldInput49SymbolsInTitleDuringClaimCreation() throws InterruptedException {
         String title49 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom009";
         String chosenExecutor = "Netology Diplom QAMID";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title49,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title49,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title49);
@@ -84,15 +84,15 @@ public class ClaimCreationTest {
     public void shouldInput50SymbolsInTitleDuringClaimCreation() throws InterruptedException {
         String title50 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiplom0008";
         String chosenExecutor = "Netology Diplom QAMID";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title50,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title50,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title50);
@@ -104,15 +104,15 @@ public class ClaimCreationTest {
         String title51 = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM00061";
         String titleOfCreatedClaim = "DiplomQADiplomQADiplomQADiplomQADiplomQADiploM0006";
         String chosenExecutor = "Ivanov Ivan Ivanovich";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title51,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title51,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(titleOfCreatedClaim);
@@ -123,15 +123,15 @@ public class ClaimCreationTest {
     public void shouldTryCreateClaimWithEmptyTitle() throws InterruptedException {
         String title = "";
         String chosenExecutor = "Смирнов Петр Петрович";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         checkMessageThatFieldsShouldBeFilled(activityTestRule);
@@ -142,15 +142,15 @@ public class ClaimCreationTest {
     public void shouldTryCreateClaimWithEmptyDescription() throws InterruptedException {
         String title = "QAMIDK7814";
         String chosenExecutor = "Смирнов Петр Петрович";
-        String executor = "yes";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = true;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         checkMessageThatFieldsShouldBeFilled(activityTestRule);
@@ -161,15 +161,15 @@ public class ClaimCreationTest {
     public void shouldTryCreateClaimWithEmptyDate() throws InterruptedException {
         String title = "QAMIDK78lFky";
         String chosenExecutor = "Иванов Данил Данилович";
-        String executor = "yes";
-        String emptyDate = "yes";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = true;
+        boolean emptyDate = true;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         saveClaim();
         checkMessageThatFieldsShouldBeFilled(activityTestRule);
@@ -180,18 +180,18 @@ public class ClaimCreationTest {
     public void shouldTryCreateClaimWithCancelSavingOfTime() throws InterruptedException {
         String title = "QAMIDK78gFct";
         String chosenExecutor = "Ivanov Danil Danilovich";
-        String executor = "yes";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "cancel";
+        boolean executor = true;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.CANCEL;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
-        ClaimCreationSteps.checkMessageThatFieldsShouldBeFilled(activityTestRule);
+        checkMessageThatFieldsShouldBeFilled(activityTestRule);
 
     }
 
@@ -200,15 +200,15 @@ public class ClaimCreationTest {
     public void shouldTryCreateClaimWithEmptyExecutor() throws InterruptedException {
         String title = "QAMID345Hpikst";
         String chosenExecutor = "";
-        String executor = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean executor = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.DIAL;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);
@@ -221,16 +221,16 @@ public class ClaimCreationTest {
     public void shouldCreateClaimWithManualTimeInput() throws InterruptedException {
         String title = "QAMID10s23";
         String chosenExecutor = "Netology Diplom QAMID";
-        String executor = "yes";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "text input";
-        String saveOrCancelTime = "save";
+        boolean executor = true;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfClaims.ClockEnter clockEnter  = ExampleOfClaims.ClockEnter.TEXT;
+        ExampleOfClaims.TimeShift timeShift = ExampleOfClaims.TimeShift.SAVE;
         String description = "New description";
         // будет введено время: 06:45 (заложено в методе, также в методе есть проверка, что введено именно это время)
         ControlPanelSteps.goToClaimsBlock();
         ClaimsSteps.initiateTheCreationOfClaim();
-        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfClaims firstClaim = new ExampleOfClaims(title,chosenExecutor,executor,emptyDate,emptyTime,clockEnter,timeShift,description);
         ClaimCreationSteps.fillInTheClaimFields(firstClaim);
         ClaimCreationSteps.saveClaim();
         ClaimsSteps.checkCreatedClaimInClaimsBlock(title);

@@ -47,20 +47,20 @@ public class ClaimCreationSteps {
             if (exampleOfClaims.chosenExecutor != null) {
                 ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(exampleOfClaims.chosenExecutor));
             } else {
-                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(exampleOfClaims.executor));
-                ClaimCreationAndEditingScreen.executorTextInput.check(matches(withText(exampleOfClaims.executor)));
+                ClaimCreationAndEditingScreen.executorTextInput.perform(replaceText(String.valueOf(exampleOfClaims.executor)));
+                ClaimCreationAndEditingScreen.executorTextInput.check(matches(withText(String.valueOf(exampleOfClaims.executor))));
             }
 
         // заполнение поля "Дата"
-        if (exampleOfClaims.emptyDate == "no") {
+        if (exampleOfClaims.emptyDate == false) {
             ClaimCreationAndEditingScreen.dateInPlanOfClaim.perform(click());
             ClaimCreationAndEditingScreen.okButton.perform(click());
         }
         // заполнение поля "Время"
-        if (exampleOfClaims.emptyTime == "no") {
-            if (exampleOfClaims.withDialPadOrTextInput == "dial") {
+        if (exampleOfClaims.emptyTime == false) {
+            if (exampleOfClaims.clockEnter == ExampleOfClaims.ClockEnter.DIAL) {
                 ClaimCreationAndEditingScreen.timeInPlanOfClaim.perform(click());
-                if (exampleOfClaims.saveOrCancelTime == "save") {
+                if (exampleOfClaims.timeShift == ExampleOfClaims.TimeShift.SAVE) {
                     ClaimCreationAndEditingScreen.okButton.perform(click());
                 } else {
                     ClaimCreationAndEditingScreen.cancelButton.perform(click());
@@ -97,7 +97,7 @@ public class ClaimCreationSteps {
     public static void saveClaim() {
         Allure.step("Сохранить заявку");
         ClaimCreationAndEditingScreen.saveButtonOfClaim.perform(click());
-        MainHelper.elementWaiting(withText("Claims"), 3000);
+//        MainHelper.elementWaiting(withText("Claims"), 3000);
     }
 
     public static void cancelSavingOfClaim() {

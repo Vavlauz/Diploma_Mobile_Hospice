@@ -6,6 +6,8 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static additional.ExampleOfNews.Status.NOTACTIVE;
+import static additional.ExampleOfNews.Status.valueOf;
 import static screenElements.NewsCreationAndEditingScreen.publicationDateTextInputOfNews;
 import static screenElements.NewsCreationAndEditingScreen.statusOfNewsSwitcher;
 import static screenElements.NewsScreen.editNewsButton;
@@ -20,6 +22,8 @@ import org.junit.runner.RunWith;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import additional.ExampleOfClaims;
 import ru.iteco.fmhandroid.R;
 
 import additional.ExampleOfNews;
@@ -58,18 +62,18 @@ public class EditNewsTests {
     public void createNewsWithActiveStatus() throws InterruptedException {
         Allure.step("Создание новости с активным статусом");
         // общие параметры для создания/редактирования новости
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         // параметры новости
         String chosenCategory = "Зарплата";
         String description = "Description";
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,description);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,chosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,description);
         ControlPanelSteps.goToNewsBlock();
         NewsSteps.initiateTheCreationOfNews();
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
@@ -84,7 +88,7 @@ public class EditNewsTests {
         // параметры новости (должны совпадать с параметрами пердварительно созданной новости!!!!!)
         String chosenCategory = "Зарплата";
         String description = "Description";
-        String finalStatus = "Not active";
+        String finalStatus = NOTACTIVE.param;
         createNewsWithActiveStatus();
         ControlPanelSteps.goToNewsBlock();
         // проверяем,что новость, действительно, создана
@@ -103,14 +107,14 @@ public class EditNewsTests {
     @DisplayName("Редактирование новости при заполнении всех полей валидными данными (кирилические символы, текущая дата, текущее время в формате циферблата)")
     public void editNewsWithValidData() throws InterruptedException {
         // общие параметры для создания/редактирования новости
-        String emptyCategory = "no";
-        String choiceOfCategory = "yes";
-        String category = "no";
-        String title = "no";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String withDialPadOrTextInput = "dial";
-        String saveOrCancelTime = "save";
+        boolean emptyCategory = false;
+        boolean choiceOfCategory = true;
+        boolean category = false;
+        boolean title = false;
+        boolean emptyDate = false;
+        boolean emptyTime = false;
+        ExampleOfNews.ClockEnter clockEnter  = ExampleOfNews.ClockEnter.DIAL;
+        ExampleOfNews.TimeShift timeShift = ExampleOfNews.TimeShift.SAVE;
         String currentDate = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
         // параметры старой новости
         String chosenCategory = "Зарплата";
@@ -124,7 +128,7 @@ public class EditNewsTests {
         // проверяем,что новость, действительно, создана
         NewsSteps.checkNewsData(chosenCategory, description);
         // редактирование новости
-        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,newChosenCategory,category,title,emptyDate,emptyTime,withDialPadOrTextInput,saveOrCancelTime,newDescription);
+        ExampleOfNews firstNew = new ExampleOfNews(emptyCategory,choiceOfCategory,newChosenCategory,category,title,emptyDate,emptyTime,clockEnter,timeShift,newDescription);
         NewsCreationAndEditingSteps.fillInTheNewsFields(firstNew);
         NewsCreationAndEditingSteps.saveNews();
         ControlPanelSteps.goToNewsBlock();
@@ -143,7 +147,7 @@ public class EditNewsTests {
         // параметры новости (должны совпадать с параметрами пердварительно созданной новости!!!!!)
         String chosenCategory = "Зарплата";
         String description = "Description";
-        String finalStatus = "Not active";
+        String finalStatus = NOTACTIVE.param;
         // создаем новость
         createNewsWithActiveStatus();
         ControlPanelSteps.goToNewsBlock();
